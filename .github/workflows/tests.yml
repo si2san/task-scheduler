@@ -1,0 +1,25 @@
+name: Tests
+on:
+  push:
+    branches: [ '**' ]
+  pull_request:
+    branches: [ '**' ]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./src
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js v22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      - name: Install npm dependencies
+        run: npm install
+      - name: Run prettier
+        run: npm run prettier
+      - name: Run tests
+        run: npm run test
