@@ -1,5 +1,5 @@
 export class Queue<T> {
-    isEmpty(): boolean {
-        return true;
-    }
+  isEmpty(): boolean {
+    return true;
+  }
 }
