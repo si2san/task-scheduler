@@ -13,6 +13,7 @@ describe("Queue", () => {
 
   test("enqueue", () => {
     queue.enqueue(1);
+
     expect(queue.isEmpty()).toBe(false);
     expect(queue.peek()).toBe(1);
   });
@@ -21,6 +22,7 @@ describe("Queue", () => {
     queue.enqueue(1);
     queue.enqueue(2);
     queue.enqueue(3);
+
     expect(queue.isEmpty()).toBe(false);
     expect(queue.size()).toBe(3);
     expect(queue.peek()).toBe(1);
@@ -29,6 +31,7 @@ describe("Queue", () => {
   test("dequeue", () => {
     queue.enqueue(1);
     const result = queue.dequeue();
+
     expect(queue.isEmpty()).toBe(true);
     expect(result).toBe(1);
   });
@@ -66,9 +69,12 @@ describe("Queue", () => {
 
   test("enqueue and dequeue interleaved", () => {
     queue.enqueue(1);
+
     expect(queue.dequeue()).toBe(1);
+
     queue.enqueue(2);
     queue.enqueue(3);
+
     expect(queue.dequeue()).toBe(2);
     expect(queue.peek()).toBe(3);
     expect(queue.size()).toBe(1);
