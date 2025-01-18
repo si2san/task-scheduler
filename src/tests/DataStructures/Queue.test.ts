@@ -11,14 +11,14 @@ describe("Queue", () => {
     expect(queue.isEmpty()).toBe(true);
   });
 
-  test("enqueue", () => {
+  test("should enqueue", () => {
     queue.enqueue(1);
 
     expect(queue.isEmpty()).toBe(false);
     expect(queue.peek()).toBe(1);
   });
 
-  test("enqueue multiple items", () => {
+  test("should enqueue multiple items", () => {
     queue.enqueue(1);
     queue.enqueue(2);
     queue.enqueue(3);
@@ -28,7 +28,7 @@ describe("Queue", () => {
     expect(queue.peek()).toBe(1);
   });
 
-  test("dequeue", () => {
+  test("should dequeue", () => {
     queue.enqueue(1);
     const result = queue.dequeue();
 
@@ -36,7 +36,7 @@ describe("Queue", () => {
     expect(result).toBe(1);
   });
 
-  test("dequeue multiple items", () => {
+  test("should dequeue multiple items", () => {
     for (let i = 1; i < 9; i++) {
       queue.enqueue(i);
     }
@@ -49,15 +49,15 @@ describe("Queue", () => {
     expect(queue.isEmpty()).toBe(true);
   });
 
-  test("peek an empty queue", () => {
+  test("should peek an empty queue", () => {
     expect(queue.peek()).toBeUndefined();
   });
 
-  test("dequeue an empty queue", () => {
+  test("should dequeue an empty queue", () => {
     expect(queue.dequeue()).toBeUndefined();
   });
 
-  test("clear the queue", () => {
+  test("should clear the queue", () => {
     queue.enqueue(1);
     queue.enqueue(2);
     queue.enqueue(3);
@@ -67,7 +67,7 @@ describe("Queue", () => {
     expect(queue.isEmpty()).toBe(true);
   });
 
-  test("enqueue and dequeue interleaved", () => {
+  test("should enqueue and dequeue interleaved", () => {
     queue.enqueue(1);
 
     expect(queue.dequeue()).toBe(1);

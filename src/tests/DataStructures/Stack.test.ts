@@ -14,14 +14,14 @@ describe("Stack", () => {
     expect(stack.pop()).toBeUndefined();
   });
 
-  test("push", () => {
+  test("should push", () => {
     stack.push(1);
 
     expect(stack.size()).toBe(1);
     expect(stack.isEmpty()).toBe(false);
   });
 
-  test("push multiple items", () => {
+  test("should push multiple items", () => {
     stack.push(1);
     stack.push(2);
     stack.push(3);
@@ -31,7 +31,7 @@ describe("Stack", () => {
     expect(stack.peek()).toBe(3);
   });
 
-  test("pop", () => {
+  test("should pop", () => {
     stack.push(1);
 
     expect(stack.pop()).toBe(1);
@@ -39,7 +39,7 @@ describe("Stack", () => {
     expect(stack.isEmpty()).toBe(true);
   });
 
-  test("pop multiple items", () => {
+  test("should pop multiple items", () => {
     for (let i = 1; i <= 8; i++) {
       stack.push(i);
     }
@@ -52,7 +52,7 @@ describe("Stack", () => {
     expect(stack.isEmpty()).toBe(true);
   });
 
-  test("should handle interleaved push and pop operations", () => {
+  test("should should handle interleaved push and pop operations", () => {
     stack.push(1);
 
     expect(stack.pop()).toBe(1);
